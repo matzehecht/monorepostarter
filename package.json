@@ -5,7 +5,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run dev -w @monorepostarter/backend & npm run dev -w @monorepostarter/frontend",
+    "dev:backend": "npm run dev -w @monorepostarter/backend",
+    "dev:frontend": "npm run dev -w @monorepostarter/frontend",
+    "build": "npm run build --workspaces",
+    "build:backend": "npm run build -w @monorepostarter/backend",
+    "build:frontend": "npm run build -w @monorepostarter/frontend",
+    "build:utils": "npm run build -w @monorepostarter/utils",
+    "lint": "npm run lint --workspaces",
+    "lint:backend": "npm run lint -w @monorepostarter/backend",
+    "lint:frontend": "npm run lint -w @monorepostarter/frontend",
+    "lint:utils": "npm run lint -w @monorepostarter/utils",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,5 +25,22 @@
     "packages/backend",
     "packages/frontend"
   ],
-  "devDependencies": {}
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "@types/eslint": "^8.4.10",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-no-type-assertion": "^1.3.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "eslint-plugin-typescript-sort-keys": "^2.1.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.3"
+  }
 }

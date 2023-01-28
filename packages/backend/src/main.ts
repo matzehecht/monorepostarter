@@ -1,8 +1,9 @@
-import express from "express";
-import { api } from "./api";
-import * as dotenv from "dotenv";
-import { existsSync } from "fs";
-import pino from "pino-http";
+// eslint-disable-next-line import/no-unused-modules
+import { existsSync } from 'fs';
+import * as dotenv from 'dotenv';
+import express, { static as serve } from 'express';
+import pino from 'pino-http';
+import { api } from './api';
 
 const STATIC_DIR = `${__dirname}/static` as const;
 const PORT = process.env.API_PORT ?? 3000;
@@ -15,18 +16,18 @@ const app = express();
 app.use(
   pino({
     transport: {
-      target: "pino-pretty",
       options: {
         colorize: true,
       },
+      target: 'pino-pretty',
     },
   })
 );
 
-app.use("/api", api);
+app.use('/api', api);
 
 if (hasStatic) {
-  app.use(express.static(STATIC_DIR));
+  app.use(serve(STATIC_DIR));
 }
 
 app.listen(3000);

@@ -1,6 +1,8 @@
-# *
-# !**/Dockerfile
-# !**/package.json
-# !**/package-lock.json
-# !**/node_modules
-# !**/dist
+**
+! packages/backend/dist
+! packages/backend/node_modules
+! packages/frontend/dist
+! packages/utils/dist
+! packages/utils/node_modules
+! **/package.json
+! node_modules
