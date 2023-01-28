@@ -1,0 +1,20 @@
+{
+  "name": "monorepostarter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run dev -w @monorepostarter/backend & npm run dev -w @monorepostarter/frontend",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "workspaces": [
+    "packages/utils",
+    "packages/backend",
+    "packages/frontend"
+  ],
+  "devDependencies": {}
+}
